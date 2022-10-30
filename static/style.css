@@ -1,0 +1,45 @@
+.container-fluid {
+	background-color: #f2f2f6;
+}
+
+.row {
+  border-radius: 8px;
+  margin: 12px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+}
+
+h2 {
+	display: block;
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size:  17px;
+	line-height: 22px;
+	font-weight: 700;
+	color: var(--common_level1_base_color,#171a1d);
+}
+
+p.sub-title {
+	color: rgba(23,26,29,.4);
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.btn {
+	padding: 0.35rem 1rem;
+	background-color: #007FFF;
+	border: #007FFF;
+}
+
+.message-input {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+img.avatar {
+	width: 64px;
+	height: 64px;
+}
