@@ -5,76 +5,78 @@
 {% block content %}
 
     <div class="row">
-		<div class="col-md-12">
-			<div class="jumbotron">
-				<h2 class="text-center">
-					酷应用配置成功！
-				</h2>
-				<p class="text-center sub-title">
-					已成功接入账号免登、消息卡片、吊顶卡片功能，点击下方模拟发送体验卡片效果。
-				</p>
-			</div>
-		</div>
-	</div>
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2 class="text-center">
+                    酷应用配置成功！
+                </h2>
+                <p class="text-center sub-title">
+                    当前服务地址：{{ service_url }}
+                    <br />
+                    点击下方模拟发送体验卡片效果
+                </p>
+            </div>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="text-left">
-				已接入钉钉免登录
-			</h3>
-			<p class="sub-title">
-				通过钉钉免登录功能，可以获取有效用户身份。
-			</p>
-			<div class="media">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-left">
+                已接入钉钉免登录
+            </h3>
+            <p class="sub-title">
+                通过钉钉免登录功能，可以获取有效用户身份。
+            </p>
+            <div class="media">
                 <img class="mr-3 avatar" alt="avatar" src="{{ current_user["avatarUrl"] }}">
-				<div class="media-body">
-					<h5 class="mt-0">
+                <div class="media-body">
+                    <h5 class="mt-0">
                         你好，{{ current_user["nick"] }}
-					</h5>
-					<p class="sub-title">
-						此处显示你的名字表示已经成功完成免登录
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                    </h5>
+                    <p class="sub-title">
+                        此处显示你的名字表示已经成功完成免登录
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				发送文本消息
-			</h3> 
-			<div class="input-group">
-				<input type="text" class="form-control" id="textMessage">
-			</div>
-			<hr />
-			<button type="button" class="btn btn-md btn-block btn-primary" onclick="sendTextMessage()">
-				试一试
-			</button>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                发送文本消息
+            </h3>
+            <div class="input-group">
+                <input type="text" class="form-control" id="textMessage">
+            </div>
+            <hr />
+            <button type="button" class="btn btn-md btn-block btn-primary" onclick="sendTextMessage()">
+                试一试
+            </button>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				发送消息卡片
-			</h3> 
-			<hr />
-			<button type="button" class="btn btn-md btn-block btn-primary" onclick="sendCardMessage()">
-				试一试
-			</button>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                发送消息卡片
+            </h3>
+            <hr />
+            <button type="button" class="btn btn-md btn-block btn-primary" onclick="sendCardMessage()">
+                试一试
+            </button>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				发送吊顶卡片
-			</h3> 
-			<hr />
-			<button type="button" class="btn btn-md btn-block btn-primary" onclick="sendTopMessage()">
-				试一试
-			</button>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                发送吊顶卡片
+            </h3>
+            <hr />
+            <button type="button" class="btn btn-md btn-block btn-primary" onclick="sendTopMessage()">
+                试一试
+            </button>
+        </div>
+    </div>
 {% end %}

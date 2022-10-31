@@ -45,4 +45,6 @@ class MainHandler(handlers.base.AuthHandler):
                 if not UtilClient.empty(err.code) and not UtilClient.empty(err.message):
                     logging.error("GetSceneGroupInfoRequest(), code=%s, msg=%s" % (err.code, err.message))
                     pass
-        self.render("home.html", group_info=group_info)
+        self.render("home.html",
+                    group_info=group_info,
+                    service_url=self.request.full_url())
