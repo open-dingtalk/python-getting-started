@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from abc import ABC
 from datetime import datetime
 import logging
 import time
@@ -31,13 +30,6 @@ class MessageCardHandler(handlers.base.AuthHandler):
         card_options = dingtalkim__1__0_models.SendInteractiveCardRequestCardOptions(
             support_forward=True
         )
-        param_map = {
-        }
-        private_data_value_key = dingtalkim__1__0_models.PrivateDataValue(
-        )
-        private_data = {
-            "privateDataValueKey": private_data_value_key
-        }
         card_data_card_param_map = {
             "title": "开始下一个特性开发吧",
             "location": "钉钉应用开发平台",
@@ -113,7 +105,7 @@ class TopBoxHandler(handlers.base.AuthHandler):
             card_template_id=self.settings["dingtalk_app"]["dt_interactive_cards"]["top_card_template_id_001"],
             open_conversation_id=open_conversation_id,
             out_track_id=out_track_id,
-            robot_code=self.settings["dingtalk_app"]["dt_robot_info"]["code"],
+            robot_code=robot_code,
             conversation_type=1,
             card_data=card_data,
             private_data=private_data,

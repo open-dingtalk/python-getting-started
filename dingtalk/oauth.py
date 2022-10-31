@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+import logging
 import time
 from typing import Any
 from typing import Dict
@@ -122,6 +122,7 @@ class DingTalkOAuth2Mixin(tornado.auth.OAuth2Mixin):
             )
             user_token = json.loads(response.body)
         except tornado.httpclient.HTTPError as e:
+            logging.error("http fetch error, %s", e)
             return None
         user = None
         try:
@@ -132,6 +133,7 @@ class DingTalkOAuth2Mixin(tornado.auth.OAuth2Mixin):
             )
             user = json.loads(response.body)
         except tornado.httpclient.HTTPError as e:
+            logging.error("http fetch error, %s", e)
             return None
         return user
 

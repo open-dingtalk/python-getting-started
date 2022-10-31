@@ -18,7 +18,6 @@ import handlers.base
 class MainHandler(handlers.base.AuthHandler):
     @tornado.web.authenticated
     async def get(self):
-        # {"nick": "\u67ef\u6770", "unionId": "xbCad0RVEC8iE", "avatarUrl": "https://static-legacy.dingtalk.com/media/lADPDhJz2AydBOLNBOXNBOU_1253_1253.jpg", "openId": "qLCJ0jFaSloiE"}
         group_info = None
 
         if self.get_argument("openConversationId", False):

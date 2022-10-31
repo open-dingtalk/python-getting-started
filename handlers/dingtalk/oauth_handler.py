@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import json
 import urllib.parse
@@ -9,9 +9,11 @@ import tornado.escape
 
 import dingtalk.oauth
 
+
 class DingTalkOAuth2LoginHandler(tornado.web.RequestHandler,
                                  dingtalk.oauth.DingTalkOAuth2Mixin):
     _COOKIE_NAME_KEY = "user_cookie_name"
+
     async def get(self):
         auth_url = (
             urllib.parse.urljoin(self.request.full_url(), "/auth/login?next=")
@@ -20,9 +22,10 @@ class DingTalkOAuth2LoginHandler(tornado.web.RequestHandler,
         if self.get_argument("authCode", False):
             code = self.get_argument("authCode")
             user = await self.get_authenticated_user(
-                redirect_uri = auth_url,
-                code = self.get_argument("authCode"))
-            if not user: return
+                redirect_uri=auth_url,
+                code=code)
+            if not user:
+                return
 
             handler = cast(tornado.web.RequestHandler, self)
             cookie_name = handler.settings[self._COOKIE_NAME_KEY]
@@ -37,4 +40,3 @@ class DingTalkOAuth2LoginHandler(tornado.web.RequestHandler,
                 scope="openid",
                 response_type="code",
                 extra_params={"state": "mystage", "prompt": "consent"})
-
