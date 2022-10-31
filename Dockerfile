@@ -8,6 +8,6 @@ COPY ./settings.example.py /work/settings.py
 RUN apk add build-base libffi libffi-dev \
     && pip install -r requirements.txt
 
-EXPOSE 8080
+EXPOSE 7001
 
 CMD ["python", "./app.py"]
