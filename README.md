@@ -1,3 +1,8 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/open-dingtalk/python-getting-started/lint-and-tests)
+![GitHub issues](https://img.shields.io/github/issues/open-dingtalk/python-getting-started)
+![GitHub](https://img.shields.io/github/license/open-dingtalk/python-getting-started)
+
+
 ## 依赖
 
 该指南假设你已经做好了一下准备工作：
