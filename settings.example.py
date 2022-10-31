@@ -20,6 +20,7 @@ app_settings = {
     },
 }
 
+
 def update_from_env():
     app_settings["cookie_secret"] = os.getenv(
         "APP_COOKIE_SECRET",
