@@ -10,7 +10,7 @@
 
 可以参考以下步骤，在本地快速运行
 
-1. 获取代码：`git clone git@gitlab.alibaba-inc.com:dingtalk-getting-started/python-getting-started.git`
+1. 获取代码：`git clone git@github.com:open-dingtalk/python-getting-started.git`
 2. 参考下一章节的配置描述，设置配置项
 3. 安装依赖：`pip3 install -r requirements.txt`
 4. 启动服务：`python3 app.py`
