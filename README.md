@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/open-dingtalk/python-getting-started/lint-and-tests)
+[![Build Status](https://github.com/open-dingtalk/python-getting-started/workflows/lint-and-tests/badge.svg?branch=master)](https://github.com/open-dingtalk/python-getting-started/actions)
 ![GitHub issues](https://img.shields.io/github/issues/open-dingtalk/python-getting-started)
 ![GitHub](https://img.shields.io/github/license/open-dingtalk/python-getting-started)
 
