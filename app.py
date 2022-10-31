@@ -32,6 +32,7 @@ def make_app():
         (r"/api/sendMessageCard", handlers.dingtalk.MessageCardHandler),
         (r"/api/sendTopCard", handlers.dingtalk.TopBoxHandler),
         (r"/", handlers.MainHandler),
+        (r"/index.html", handlers.MainHandler),
         (r"/static/(.*)", tornado.web.StaticFileHandler, {"path": os.path.join(PROJECT_ROOT, "static")})
     ],
         login_url="/auth/login",
@@ -44,10 +45,11 @@ def make_app():
 
 async def main():
     logging.basicConfig(format="%(asctime)s %(filename)s(%(lineno)s): %(levelname)-5s %(message)s", level=logging.INFO)
-    logging.info("listen port 8080")
+    port = 7001
+    logging.info("listen port %d", port)
 
     app = make_app()
-    app.listen(8080)
+    app.listen(port)
     await asyncio.Event().wait()
 
 
