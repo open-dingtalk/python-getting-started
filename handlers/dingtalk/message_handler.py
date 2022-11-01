@@ -13,12 +13,14 @@ from alibabacloud_dingtalk.im_1_0.client import Client as dingtalkim_1_0Client
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
+import tornado.web
 
 import handlers.base
 from dingtalk.oauth import token_manager
 
 
 class MessageCardHandler(handlers.base.AuthHandler):
+    @tornado.web.authenticated
     async def post(self):
         payload = json.loads(str(self.request.body, "utf-8"))
         open_conversation_id = payload["openConversationId"]
@@ -69,6 +71,7 @@ class MessageCardHandler(handlers.base.AuthHandler):
 
 
 class TopBoxHandler(handlers.base.AuthHandler):
+    @tornado.web.authenticated
     async def post(self):
         payload = json.loads(str(self.request.body, "utf-8"))
         open_conversation_id = payload["openConversationId"]
@@ -152,6 +155,7 @@ class TopBoxHandler(handlers.base.AuthHandler):
 
 
 class TextMessageHandler(handlers.base.AuthHandler):
+    @tornado.web.authenticated
     async def post(self):
         token = await token_manager.get_token()
         robot_code = self.settings["dingtalk_app"]["dt_robot_info"]["code"]
