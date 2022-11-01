@@ -27,6 +27,8 @@ def make_app():
     dingtalk.oauth.token_manager.set_storage_service(dingtalk.oauth.StorageService())
 
     return tornado.web.Application([
+        (r"/api/getUserInfo", handlers.dingtalk.JsapiUserInfoHandler),
+        (r"/api/getUserInfoOAuth2", handlers.dingtalk.OAuth2UserInfoHandler),
         (r"/auth/login", handlers.dingtalk.DingTalkOAuth2LoginHandler),
         (r"/api/sendText", handlers.dingtalk.TextMessageHandler),
         (r"/api/sendMessageCard", handlers.dingtalk.MessageCardHandler),
