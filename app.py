@@ -13,12 +13,13 @@ import handlers
 import handlers.base
 import handlers.dingtalk
 import settings
+import utils.env
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 def make_app():
-    settings.update_from_env()
+    utils.env.update_from_env(settings.app_settings)
     oauth_setting = {
         "client_id": settings.app_settings["dt_app_info"]["app_key"],
         "client_secret": settings.app_settings["dt_app_info"]["app_secret"],
