@@ -110,6 +110,7 @@ const Home = () => {
           当前服务地址：http://127.0.0.1:7001/index.html
         </p>
         <p className="sub-title">点击下方模拟发送体验卡片效果</p>
+        <Button target="_black" href="https://open.dingtalk.com/document/org/cool-application-overview" type="link">酷应用开发指南</Button>
       </div>
       <Card title={'已接入钉钉免登录'}>
         <div className="user-card">
@@ -130,13 +131,12 @@ const Home = () => {
           <Form.Item name="title" rules={[{ required: false }]}>
             <Input placeholder="随便输入点什么" />
           </Form.Item>
-          <Divider>Text</Divider>
           <Button htmlType="submit" type="primary" block>
             试一试
           </Button>
         </Form>
       </Card>
-      <Card title={'已实现的消息卡片'}>
+      <Card title={'发送消息卡片'}>
         <div>
           <img
             className="img"
@@ -144,12 +144,12 @@ const Home = () => {
             alt=""
           />
         </div>
-        <Divider>Text</Divider>
+        <Divider></Divider>
         <Button type="primary" onClick={sendMessageCard} block>
           试一试
         </Button>
       </Card>
-      <Card title={'已实现的吊顶卡片'}>
+      <Card title={'发送吊顶卡片'}>
         <div>
           <img
             className="img"
@@ -157,7 +157,7 @@ const Home = () => {
             alt=""
           />
         </div>
-        <Divider>Text</Divider>
+        <Divider></Divider>
         <Button type="primary" onClick={sendTopCard} block>
           试一试
         </Button>
