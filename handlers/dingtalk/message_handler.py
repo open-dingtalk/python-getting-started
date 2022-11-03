@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
 import logging
 import time
 import uuid
@@ -33,9 +32,7 @@ class MessageCardHandler(handlers.base.AuthHandler):
             support_forward=True
         )
         card_data_card_param_map = {
-            "title": "开始下一个特性开发吧",
-            "location": "钉钉应用开发平台",
-            "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),  # "2022-10-18 14:02:03",
+            "videoUrl": "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/352793594610.mp4",
         }
         card_data_card_media_id_param_map = {
         }
@@ -95,10 +92,7 @@ class TopBoxHandler(handlers.base.AuthHandler):
             "key": "sfrtxxxx"
         }
         card_data_card_param_map = {
-            "progress": "30",
-            "total": "10",
-            "finished": "3",
-            "unfinished": "7",
+            # 填入自定义卡片中的模版参数
         }
         card_data = dingtalkim__1__0_models.InteractiveCardCreateInstanceRequestCardData(
             card_param_map=card_data_card_param_map,

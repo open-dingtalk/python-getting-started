@@ -14,7 +14,7 @@ class AuthHandler(BaseHandler):
         """
         login_user = models.user.LoginUser()
         user_agent = self.request.headers.get("User-Agent")
-        if user_agent and "dingtalk" in user_agent:
+        if user_agent and "dingtalk" in user_agent.lower():
             # 这里返回一个非空对象，以避免进入OAuth2免登流程，而是在前端页面中通过JSAPI实现免登。
             return login_user
 
